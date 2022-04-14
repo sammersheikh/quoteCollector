@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<h1>{{ quote_category }}</h1>
+
+
+{% for q in quotes %}
+{% if q.category == quote_category %}
+
+
+<h2 class="quote">"{{ q.quote }}"</h2>
+<h4 class="by">by: {{ q.by }}</h4>
+
+
+{% endif %}
+{% endfor %}
+
+{% endblock %}

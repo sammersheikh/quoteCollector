@@ -23,6 +23,20 @@ h1 {
   color: white;
 }
 
+h2.quote {
+  color: white;
+}
+
 .card {
     background-color: tan;
   }
+
+h5 {
+  color: white;
+}
+h4.by {
+  color: white;
+}
+h5.h5Black {
+  color: black;
+}
