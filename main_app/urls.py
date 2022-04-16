@@ -7,4 +7,7 @@ urlpatterns = [
     path('quotes/', views.quotes_index, name='index'),
     path('quotes/category/<str:quote_category>', views.category, name="category"),
     path('quotes/<int:quote_id>/', views.quotes_detail, name='detail'),
+    path('quotes/create/', views.QuoteCreate.as_view(), name='quotes_create'),
+    path('quotes/<int:pk>/update/', views.QuoteUpdate.as_view(), name='quotes_update'),
+    path('quotes/<int:pk>/delete/', views.QuoteDelete.as_view(), name='quotes_delete'),
 ]

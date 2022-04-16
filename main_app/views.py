@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Quote
 
 
@@ -27,3 +28,16 @@ def category(request, quote_category):
 def quotes_detail(request, quote_id):
     quote = Quote.objects.get(id=quote_id)
     return render(request, 'quotes/detail.html', { 'quote': quote })
+
+class QuoteCreate(CreateView):
+    model = Quote
+    fields = '__all__'
+    success_url = '/quotes/'
+
+class QuoteUpdate(UpdateView):
+    model = Quote
+    fields = ['quote', 'by']
+
+class QuoteDelete(DeleteView):
+    model = Quote
+    success_url = '/quotes/'

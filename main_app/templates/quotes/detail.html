@@ -9,6 +9,10 @@
         <h2>"{{ quote.quote }}"</h2>
         <h5 class="h5Black">by: {{ quote.by }}</h5>
     </div>
+    <div class="card-action">
+        <a href="{% url 'quotes_update' quote.id %}">Edit</a>
+        <a href="{% url 'quotes_delete' quote.id %}">Delete</a>
+      </div>
 </div>
 
 {% endblock %}
